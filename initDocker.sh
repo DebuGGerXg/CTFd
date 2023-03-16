@@ -6,4 +6,5 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose version
 docker swarm init
 docker node update --label-add='name=linux-1' $(docker node ls -q)
-echo 'success'
+docker-compose up -d
+echo "success start CTFd by XG"
