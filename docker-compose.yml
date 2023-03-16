@@ -62,8 +62,8 @@ services:
       - -c
       - /conf/frps.ini
     ports:
-      - 14000-15000:14000-15000  # 映射direct类型题目的端口
-      - 14000:15000  # 映射http类型题目的端口
+      - 24000-25000:24000-25000  # 映射direct类型题目的端口
+      - 8083:8083  # 映射http类型题目的端口
     networks:
       default:
       frp_connect:
