@@ -1,3 +1,4 @@
+#!/bin/bash
 curl -sSL https://get.daocloud.io/docker | sh
 curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
