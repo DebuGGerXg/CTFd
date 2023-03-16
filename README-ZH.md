@@ -26,7 +26,7 @@
 cd CTFd
 chmod +x initDocker.sh
 sudo ./initDocker.sh #安装docker 和docker-compose 构建docker swarm集群 启动ctfd
-# 端口在9124
+# 端口在8000
 ```
 
 ## 思路
