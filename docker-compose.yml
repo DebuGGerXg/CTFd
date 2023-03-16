@@ -6,7 +6,7 @@ services:
     user: root
     restart: always
     ports:
-      - "9124:8000"
+      - "8000:8000"
     environment:
       - UPLOAD_FOLDER=/var/uploads
       - DATABASE_URL=mysql+pymysql://ctfd:ctfd@db/ctfd
@@ -62,8 +62,8 @@ services:
       - -c
       - /conf/frps.ini
     ports:
-      - 9125-9129:9125-9129  # 映射direct类型题目的端口
-      - 9123:9123  # 映射http类型题目的端口
+      - 14000-15000:14000-15000  # 映射direct类型题目的端口
+      - 14000:15000  # 映射http类型题目的端口
     networks:
       default:
       frp_connect:
