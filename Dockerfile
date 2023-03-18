@@ -2,7 +2,7 @@ FROM python:3.9-slim-buster
 
 WORKDIR /opt/CTFd
 RUN mkdir -p /opt/CTFd /var/log/CTFd /var/uploads
-
+RUN sed -i "s@http://deb.debian.org@http://mirrors.aliyun.com@g" /etc/apt/sources.list
 # hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -21,7 +21,7 @@ COPY . /opt/CTFd
 RUN pip install --no-cache-dir -r requirements.txt \
     && for d in CTFd/plugins/*; do \
         if [ -f "$d/requirements.txt" ]; then \
-            pip install --no-cache-dir -r "$d/requirements.txt";\
+            pip install --no-cache-dir -r "$d/requirements.txt" -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com;\
         fi; \
     done;
 
